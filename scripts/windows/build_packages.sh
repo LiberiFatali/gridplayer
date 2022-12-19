@@ -30,7 +30,7 @@ pushd "$DIST_DIR"
 
 mkdir "$APP_NAME/portable_data"
 
-zip -r "$APP_NAME-$APP_VERSION-win64-portable.zip" "$APP_NAME"
+zip a -bsp1 "$APP_NAME-$APP_VERSION-win64-portable.zip" "$APP_NAME"
 
 rmdir "$APP_NAME/portable_data"
 
