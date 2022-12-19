@@ -41,7 +41,7 @@ BASE_DIR="$DIST_DIR/$APP_NAME"
 LIB_DIR="$DIST_DIR/lib"
 
 mkdir "$LIB_DIR"
-mv $BASE_DIR/* "$LIB_DIR" &> /dev/bull
+mv $BASE_DIR/* "$LIB_DIR" &> /dev/null
 
 # Move main exe back into base dir
 mv "$LIB_DIR/$APP_NAME.exe" "$BASE_DIR"
