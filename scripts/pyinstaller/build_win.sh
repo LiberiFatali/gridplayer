@@ -65,7 +65,7 @@ VLC_EMBED_SRC=$(realpath "$BUILD_DIR/libVLC")
 
 if [ ! -d "$VLC_EMBED_SRC" ]; then
     # wget -q -nc -O "$BUILD_DIR/vlc.zip" "$VLC_URL" || true
-    curl -kLSs "$VLC_URL" -o "$BUILD_DIR/vlc.zip" || true
+    curl -kL "$VLC_URL" -o "$BUILD_DIR/vlc.zip" || true
     unzip -oq "$BUILD_DIR/vlc.zip" -d "$BUILD_DIR"
 
     mkdir -p "$VLC_EMBED_SRC/plugins"
