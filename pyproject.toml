@@ -50,7 +50,6 @@ mdformat = "1.0.0"
 pre-commit = "^2.15.0"
 pytest = "^7.1.2"
 keepachangelog = "^1.0.0"
-pylint = "^2.15.8"
 
 [tool.flakehell]
 base = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/flakehell.toml"
