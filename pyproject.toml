@@ -38,7 +38,8 @@ python-vlc = "3.0.11115"
 pyobjc-core = { version = "*", platform = "darwin" }
 pyobjc-framework-Cocoa = { version = "*", platform = "darwin" }
 streamlink = "8.0.0"
-yt-dlp = "2025.11.12"
+yt-dlp = {version = "2025.11.12", extras = ["default"]}
+poetry-plugin-export = "^1.9.0"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.8.0"

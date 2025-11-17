@@ -6,7 +6,7 @@ SCRIPT_DIR="$( cd "$( dirname $0 )" && pwd )"
 
 . "scripts/init_app_vars.sh"
 
-VLC_URL="https://get.videolan.org/vlc/3.0.17.4/win64/vlc-3.0.17.4-win64.zip"
+VLC_URL="https://get.videolan.org/vlc/3.0.21/win64/vlc-3.0.21-win64.zip"
 PYINSTALLER_VERSION="5.11.0"
 
 mkdir -p "$BUILD_DIR"
@@ -38,8 +38,10 @@ echo "Embedding VLC"
 VLC_EMBED_SRC=$(realpath "$BUILD_DIR/libVLC")
 
 if [ ! -d "$VLC_EMBED_SRC" ]; then
-    wget -q -nc -O "$BUILD_DIR/vlc.zip" "$VLC_URL" || true
-    unzip -oq "$BUILD_DIR/vlc.zip" -d "$BUILD_DIR"
+    if ! [ -f "$BUILD_DIR/vlc.zip" ]; then
+        curl -kL "$VLC_URL" -o "$BUILD_DIR/vlc.zip" || true
+        unzip -oq "$BUILD_DIR/vlc.zip" -d "$BUILD_DIR"
+    fi
 
     mkdir -p "$VLC_EMBED_SRC/plugins"
 
