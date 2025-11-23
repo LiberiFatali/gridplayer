@@ -9,20 +9,20 @@ source "scripts/init_app_vars.sh"
 # Convert c:\path to c:\\path
 escapeSubst() { sed 's/[&#\]/\\&/g'; }
 
-ISCC="/c/Program Files (x86)/Inno Setup 6/ISCC.exe"
+# ISCC="/c/Program Files (x86)/Inno Setup 6/ISCC.exe"
 
-echo "Building installer"
+# echo "Building installer"
 
-cp "$SCRIPT_DIR/installer.iss" "$BUILD_DIR/installer.iss"
+# cp "$SCRIPT_DIR/installer.iss" "$BUILD_DIR/installer.iss"
 
-APP_SRC=$(cygpath -w "$DIST_DIR/$APP_NAME" | escapeSubst)
+# APP_SRC=$(cygpath -w "$DIST_DIR/$APP_NAME" | escapeSubst)
 
-replace_app_vars "$BUILD_DIR/installer.iss"
+# replace_app_vars "$BUILD_DIR/installer.iss"
 
-sed -i "s#{APP_SRC}#$APP_SRC#g" "$BUILD_DIR/installer.iss"
-PYTHONPATH="$ROOT_DIR" python "$SCRIPT_DIR/generate_file_associations.py" "{APP_FILE_ASSOCIATIONS}" "$BUILD_DIR/installer.iss"
+# sed -i "s#{APP_SRC}#$APP_SRC#g" "$BUILD_DIR/installer.iss"
+# PYTHONPATH="$ROOT_DIR" python "$SCRIPT_DIR/generate_file_associations.py" "{APP_FILE_ASSOCIATIONS}" "$BUILD_DIR/installer.iss"
 
-"$ISCC" //O"dist" //F"$APP_NAME-$APP_VERSION-win64-install" "$BUILD_DIR/installer.iss"
+# "$ISCC" //O"dist" //F"$APP_NAME-$APP_VERSION-win64-install" "$BUILD_DIR/installer.iss"
 
 echo "Building portable zip"
 
