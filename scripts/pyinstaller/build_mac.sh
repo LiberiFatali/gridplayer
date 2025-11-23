@@ -27,7 +27,7 @@ cp "$SCRIPT_DIR/mime_vlc.plist" "$BUILD_DIR/mime_vlc.plist"
 
 copy_with_app_vars "$SCRIPT_DIR/pyinstaller_mac.spec" "$BUILD_DIR/$APP_NAME.spec"
 
-pyinstaller --ascii --clean --noconfirm "$BUILD_DIR/$APP_NAME.spec"
+pyinstaller --clean --noconfirm "$BUILD_DIR/$APP_NAME.spec"
 
 # Post-build
 # =============
