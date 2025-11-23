@@ -32,7 +32,11 @@ gridplayer = "gridplayer.__main__:main"
 [tool.poetry.dependencies]
 python = "^3.10"
 PyQt5 = "5.15.7"
-PyQt5-Qt5 = "5.15.2"
+PyQt5-Qt5 = [
+    { version = "5.15.11", platform = "darwin" },
+    { version = "5.15.2", platform = "linux" },
+    { version = "5.15.2", platform = "win32" }
+]
 pydantic = "^1.8.2"
 python-vlc = "3.0.11115"
 pyobjc-core = { version = "*", platform = "darwin" }
