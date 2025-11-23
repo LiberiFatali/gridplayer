@@ -6,8 +6,8 @@ SCRIPT_DIR="$( cd "$( dirname $0 )" && pwd )"
 
 . "scripts/init_app_vars.sh"
 
-VLC_URL="https://get.videolan.org/vlc/3.0.18/macosx/vlc-3.0.18-intel64.dmg"
-PYINSTALLER_VERSION="5.11.0"
+VLC_URL="https://get.videolan.org/vlc/3.0.21/macosx/vlc-3.0.21-intel64.dmg"
+PYINSTALLER_VERSION="6.16.0"
 
 mkdir -p "$BUILD_DIR"
 
@@ -34,7 +34,7 @@ pyinstaller --ascii --clean --noconfirm "$BUILD_DIR/$APP_NAME.spec"
 
 echo "Embedding VLC"
 
-VLC_EMBED_SRC=$(realpath "$BUILD_DIR/libVLC")
+VLC_EMBED_SRC="$(realpath "$BUILD_DIR/libVLC")"
 
 if [ ! -d "$VLC_EMBED_SRC" ]; then
     wget -q -nc -O "$BUILD_DIR/vlc.dmg" "$VLC_URL" || true
