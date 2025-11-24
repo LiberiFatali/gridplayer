@@ -4,7 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.5.31] - 2025-11-24
+
+### Added
+
+* New github actions to build this (LiberiFatali) fork
+
+### Changed
+
+* Update minimum Python version to 3.10
+* Update streamlink to 8.0.0 and yt-dlp to version 2025.11.12
+
+### Fixed
+
+* Various changes to build mac, windows and linux succesfully
 
 ## [0.5.3] - 2023-10-17
 
